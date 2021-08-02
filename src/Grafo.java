@@ -74,4 +74,17 @@ public class Grafo<T> {
 		return "Contenido del Grafo:\n" + getVertices();
 	}
 	
+	// Metodo de apoyo para inicializar las etiquetas
+	
+	private void inicializarLabel() {
+		Nodo<Vertice<T>> aux = getVertices().getFirst();
+		for( ; aux != null; aux = aux.getNext()) {
+			aux.getData().setLabel(0);
+			Nodo<Arista<T>> auxVer = aux.getData().getLista().getFirst();
+			for( ; auxVer != null; auxVer = auxVer.getNext()) {
+				aux.getData().setLabel(0);
+			}
+		}
+	}
+	
 }
