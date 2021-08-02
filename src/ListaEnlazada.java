@@ -33,6 +33,17 @@ public class ListaEnlazada<T> {
 		setFirst(new Nodo<T>(data, getFirst()));
 	}
 	
+	// Insertar al final de un Nodo
+	public void insertLast(T data) {
+		Nodo<T> aux = getFirst();
+		// Recorrer el Nodo hasta llegar al final
+		while(aux.getNext() != null) {
+			aux = aux.getNext();
+		}
+		// Aux contiene el ultimo Nodo, insertar al siguiente
+		aux.setNext(new Nodo<T>(data));
+	}
+	
 	// Buscar un elemento dentro de nuestra Lista Enlazada
 	public T search(T data) {
 		// Rescatar la referencia al primer Nodo
