@@ -1,7 +1,7 @@
 
 public class TestGrafo {
 	
-  public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		// Creando un objeto de tipo Grafo
 		Grafo<String> grafo = new Grafo<String>();
@@ -24,6 +24,10 @@ public class TestGrafo {
 		System.out.println("Grafo de ciudades:\n");
 		System.out.println(grafo);
 		
+		// Probando el recorrido DFS
+		System.out.println("Probando el recorrido DFS para Cusco");
+		grafo.DFS("Cusco");
+		
 	}
-  
+	
 }
