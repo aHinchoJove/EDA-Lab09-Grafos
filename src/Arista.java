@@ -5,6 +5,7 @@ public class Arista<T> {
 	
 	protected Vertice<T> destino;
 	protected int peso;
+	protected int label; // 0 => Sin explorar, 1 => Descubierta, 2 => Back
 	
 	// Constructores de la clase Arista
 	
