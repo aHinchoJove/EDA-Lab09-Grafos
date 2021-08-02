@@ -5,7 +5,8 @@ public class Vertice<T> {
 	
 	protected T data;
 	protected ListaEnlazada<Arista<T>> listaAdyacencia;
-	
+	protected int label; // 0 => Sin explorar, 1 => Explorada
+
 	// Constructor de la clase Vertice
 	
 	public Vertice(T data) {
