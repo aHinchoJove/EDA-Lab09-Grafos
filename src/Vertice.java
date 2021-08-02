@@ -6,7 +6,7 @@ public class Vertice<T> {
 	protected T data;
 	protected ListaEnlazada<Arista<T>> listaAdyacencia;
 	protected int label; // 0 => Sin explorar, 1 => Explorada
-
+	
 	// Constructor de la clase Vertice
 	
 	public Vertice(T data) {
@@ -30,6 +30,14 @@ public class Vertice<T> {
 	
 	public void setLista() {
 		this.listaAdyacencia = new ListaEnlazada<Arista<T>>();
+	}
+	
+	public int getLabel() {
+		return this.label;
+	}
+	
+	public void setLabel(int label) {
+		this.label = label;
 	}
 	
 	// Metodos de la clase Vertice
