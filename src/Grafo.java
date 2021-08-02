@@ -80,9 +80,9 @@ public class Grafo<T> {
 		Nodo<Vertice<T>> aux = getVertices().getFirst();
 		for( ; aux != null; aux = aux.getNext()) {
 			aux.getData().setLabel(0);
-			Nodo<Arista<T>> auxVer = aux.getData().getLista().getFirst();
-			for( ; auxVer != null; auxVer = auxVer.getNext()) {
-				aux.getData().setLabel(0);
+			Nodo<Arista<T>> auxA = aux.getData().getLista().getFirst();
+			for( ; auxA != null; auxA = auxA.getNext()) {
+				auxA.getData().setLabel(0);
 			}
 		}
 	}
