@@ -57,7 +57,7 @@ public class ListaEnlazada<T> {
 		String retornar = "";
 		Nodo<T> aux = getFirst();
 		while(aux != null) {
-			retornar += (aux.getData() + ", ");
+			retornar += aux.getData();
 			aux = aux.getNext();
 		}
 		return retornar;
