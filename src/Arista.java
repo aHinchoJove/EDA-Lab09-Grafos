@@ -36,6 +36,14 @@ public class Arista<T> {
 		this.peso = peso;
 	}
 	
+	public int getLabel() {
+		return this.label;
+	}
+	
+	public void setLabel(int label) {
+		this.label = label;
+	}
+	
 	// Metodos de la clase Arista
 	
 	public boolean equals(Object obj) {
