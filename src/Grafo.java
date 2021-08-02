@@ -87,4 +87,46 @@ public class Grafo<T> {
 		}
 	}
 	
+	// Metodo para el recorrido DFS
+	
+	public void DFS(T data) {
+		Vertice<T> nuevo = new Vertice<T>(data);
+		Vertice<T> auxiliar = getVertices().search(nuevo);
+		// Verificar que el Vertice existe dentro del Grafo
+		if(auxiliar == null) {
+			System.out.println("El Vertice no existe ...");
+			return;
+		}
+		// En caso existe el Vertice, inicializar las etiquetas
+		inicializarLabel();
+		DFSApoyo(auxiliar);
+	}
+	
+	// Metodo de apoyo para el recorrido DFS
+	
+	private void DFSApoyo(Vertice<T> auxiliar) {
+		// Marcarlo como ya visitado
+		auxiliar.setLabel(1);
+		// Mostrarlo por consola
+		System.out.println(auxiliar + ", ");
+		// Recorrer la lista de Aristas del Vertice
+		Nodo<Arista<T>> auxA = auxiliar.getLista().getFirst();
+		for( ; auxA != null; auxA = auxA.getNext()) {
+			// Evaluar la etiqueta
+			if(auxA.getData().getLabel() == 0) {
+				Vertice<T> opuesto = auxA.getData().getDestino();
+				// Verificar la etiqueta del vecino
+				if(opuesto.getLabel() == 0) {
+					// Cambiar la etiqueta a Descubierto
+					auxA.getData().setLabel(1);
+					// Llamar al metodo recursivamente con el opuesto
+					DFSApoyo(opuesto);
+				} else {
+					// Si no es verdad la etiquera sera Back
+					auxA.getData().setLabel(2);
+				}
+			}
+		}
+	}
+	
 }
