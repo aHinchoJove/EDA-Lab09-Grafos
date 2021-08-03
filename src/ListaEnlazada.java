@@ -127,7 +127,7 @@ public class ListaEnlazada<T> {
 		// Iterar mientras la Lista pequenia tenga Nodos
 		while(inicioP != null) {
 			// Buscar si inicioP esta dentro de la Lista grande
-			T buscar = search(inicioP.getData());
+			T buscar = copia.search(inicioP.getData());
 			// Si inicioP se encuentra en la Lista grande
 			if(buscar != null) {
 				System.out.println("El elemento " + inicioP.getData() 
