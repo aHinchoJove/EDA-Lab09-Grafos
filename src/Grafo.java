@@ -25,8 +25,6 @@ public class Grafo<T> {
 	
 	// Metodos de la clase Grafo
 	
-	
-	
 	// Metodo para insertar Vertices en el Grafo
 	public void insertarVertice(T data) {
 		Vertice<T> nuevo = new Vertice<T>(data);
