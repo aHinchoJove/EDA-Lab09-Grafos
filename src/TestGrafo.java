@@ -3,22 +3,6 @@ public class TestGrafo {
 	
 	public static void main(String[] args) {
 		
-		// Lista grande
-		ListaEnlazada<Integer> grande = new ListaEnlazada<Integer>();
-		grande.insertLast(4);
-		grande.insertLast(7);
-		grande.insertLast(1);
-		grande.insertLast(2);
-		ListaEnlazada<Integer> pequena = new ListaEnlazada<Integer>();
-		pequena.insertLast(1);
-		pequena.insertLast(2);
-		pequena.insertLast(2);
-		
-		System.out.println("Comparacion : " + grande.incluye(pequena) + "\n");
-		
-		System.out.println("Lista Grande:\n" + grande);
-		System.out.println("Lista Grande:\n" + pequena);
-		
 		// Creando un objeto de tipo Grafo
 		Grafo<String> grafo = new Grafo<String>();
 		
@@ -70,14 +54,50 @@ public class TestGrafo {
 		otroGrafo.insertarArista("Cusco", "Arequipa", 4);
 		otroGrafo.insertarArista("Piura", "Lima", 5);
 		otroGrafo.insertarArista("Lima", "Callao", 5);
-		otroGrafo.insertarArista("Callao", "Moquegua", 7);
 		otroGrafo.insertarArista("Cusco", "Lima", 6);
 		otroGrafo.insertarArista("Piura", "Tarapoto", 3);
 		
-		// Imprimiendo el contenido del otroGrafo
+		// Imprimiendo el contenido del 'otroGrafo'
 		System.out.println("Otro Grafo de ciudades:\n");
 		System.out.println(otroGrafo);
 		
+		// Probando el metodo 'incluye' de la clase Grafo
+		// En este caso 'grafo' esta incluido en 'otroGrafo'
+		System.out.println("Compararando 'otroGrafo' con 'grafo'\n");
+		System.out.println("El Grafo 'otroGrafo' incluye a 'grafo'? : "
+				+ otroGrafo.incluye(grafo));
+		
+		// Creando otro objeto de tipo Grafo
+		
+		Grafo<String> otroGrafo2 = new Grafo<String>();
+		
+		// Insertando algunos Vertices
+		otroGrafo2.insertarVertice("Lima");
+		otroGrafo2.insertarVertice("Arequipa");
+		otroGrafo2.insertarVertice("Cusco");
+		otroGrafo2.insertarVertice("Piura");
+		otroGrafo2.insertarVertice("Tarapoto");
+		otroGrafo2.insertarVertice("Moquegua");
+		otroGrafo2.insertarVertice("Callao");
+		
+		// Insertando algunas Aristas
+		otroGrafo2.insertarArista("Lima", "Arequipa", 8);
+		otroGrafo2.insertarArista("Moquegua", "Callao", 10);
+		otroGrafo2.insertarArista("Cusco", "Arequipa", 4);
+		otroGrafo2.insertarArista("Lima", "Callao", 5);
+		otroGrafo2.insertarArista("Cusco", "Lima", 6);
+		otroGrafo2.insertarArista("Piura", "Tarapoto", 3);
+		
+		// Imprimiendo el contenido del 'otroGrafo2'
+		System.out.println("\n'Otro Grafo 2' de ciudades:\n");
+		System.out.println(otroGrafo2);
+		
+		// Probando el metodo 'incluye' de la clase Grafo
+		// En este caso 'grafo' NO esta incluido en 'otroGrafo'
+		// YA QUE FALTA LA ARISTA LIMA - PIURA QUE EXISTE EN 'GRAFO'
+		System.out.println("Compararando 'otroGrafo2' con 'grafo'\n");
+		System.out.println("El Grafo 'otroGrafo2' incluye a 'grafo'? : "
+				+ otroGrafo2.incluye(grafo));		
 	}
 	
 }
