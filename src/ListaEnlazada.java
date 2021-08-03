@@ -103,7 +103,7 @@ public class ListaEnlazada<T> {
 		return retornar;
 	}
 	
-	public ListaEnlazada<T> copiar(ListaEnlazada<T> lista) {
+	public ListaEnlazada<T> copiar() {
 		// Rescatar el Nodo inicial
 		Nodo<T> inicio = getFirst();
 		// Crear una nueva Lista Enlazada
@@ -123,7 +123,7 @@ public class ListaEnlazada<T> {
 		// Rescatar el Nodo inicial de la Lista pequenia
 		Nodo<T> inicioP = otraLista.getFirst();
 		// Hacer una copia de Lista grande
-		ListaEnlazada<T> copia = copiar(this);
+		ListaEnlazada<T> copia = copiar();
 		// Iterar mientras la Lista pequenia tenga Nodos
 		while(inicioP != null) {
 			// Buscar si inicioP esta dentro de la Lista grande
