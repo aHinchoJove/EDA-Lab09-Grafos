@@ -201,4 +201,52 @@ public class Grafo<T> {
 		}
 	}
 	
+	// Metodo para el recorrido Dijkstra
+	
+	public void Dijkstra(T data) {
+		
+	}
+	
+	// Metodo de apoyo para buscar un Vertice
+	public Vertice<T> buscarVertice(Vertice<T> buscar) {
+		return getVertices().search(buscar);
+	}
+	
+	// Metodo para ver si un Grafo incluye a Otro
+	// OJO: El Grafo que llama al metodo es el mas grande
+	// y el que enviamos por paramatro es el mas pequenio
+	public boolean incluye(Grafo<T> otroGrafo) {
+		// Variable de apoyo para el retorno del metodo
+		boolean retornar = false;
+		// Rescatar los Vertices del Grafo grande
+		ListaEnlazada<Vertice<T>> copiaG = getVertices().copiar();
+		// Rescatar los Vertices del Grafo 'otroGrafo'
+		ListaEnlazada<Vertice<T>> copiaP = otroGrafo.getVertices().copiar();
+		// Rescatar el Nodo inicial del Grafo pequeno
+		Nodo<Vertice<T>> inicio = copiaP.getFirst();
+		// Mientras que haya Vertices, iteraremos
+		while(inicio != null) {
+			Vertice<T> buscar = copiaG.search(inicio.getData());
+			// Si se encuentra entonces verificar la Lista de Adyacencia
+			if(buscar != null) {
+				System.out.println("El Vertice " + buscar.getData() 
+					+ ", esta incluido");
+				// Verificando Lista de Adyacencia esta incluida
+				if(buscar.getLista().incluye(inicio.getData().getLista())) {
+					// Si las Lista de Adyacencia esta incluida devolver true
+					System.out.println("Las Listas de Adyacencia esta incluida");
+					retornar = true;
+					inicio = inicio.getNext();
+				} else {
+					// Si las Lista de Adyacencia no esta incluida devolver false
+					// y romper el ciclo ya que no es necesario revisar mas
+					System.out.println("Las Listas de Adyacencia no esta incluida");
+					retornar = false;
+					break;
+				}
+			}
+		}
+		return retornar;
+	}
+	
 }
