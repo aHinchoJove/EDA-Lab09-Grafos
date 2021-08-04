@@ -58,7 +58,7 @@ public class TestGrafo {
 		otroGrafo.insertarArista("Piura", "Tarapoto", 3);
 		
 		// Imprimiendo el contenido del 'otroGrafo'
-		System.out.println("Otro Grafo de ciudades:\n");
+		System.out.println("\nOtro Grafo de ciudades:\n");
 		System.out.println(otroGrafo);
 		
 		// Probando el metodo 'incluye' de la clase Grafo
