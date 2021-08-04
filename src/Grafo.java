@@ -204,7 +204,8 @@ public class Grafo<T> {
 	// Metodo para el recorrido Dijkstra
 	
 	public void Dijkstra(T data) {
-		
+		System.out.println("No se pudo implementar el codigo para Dijkstra");
+		System.out.println("Por favor, aceptar las disculpas del caso ...");
 	}
 	
 	// Metodo de apoyo para buscar un Vertice
@@ -220,10 +221,8 @@ public class Grafo<T> {
 		boolean retornar = false;
 		// Rescatar los Vertices del Grafo grande
 		ListaEnlazada<Vertice<T>> copiaG = getVertices().copiar();
-		// Rescatar los Vertices del Grafo 'otroGrafo'
-		ListaEnlazada<Vertice<T>> copiaP = otroGrafo.getVertices().copiar();
 		// Rescatar el Nodo inicial del Grafo pequeno
-		Nodo<Vertice<T>> inicio = copiaP.getFirst();
+		Nodo<Vertice<T>> inicio = otroGrafo.getVertices().getFirst();
 		// Mientras que haya Vertices, iteraremos
 		while(inicio != null) {
 			Vertice<T> buscar = copiaG.search(inicio.getData());
@@ -235,6 +234,7 @@ public class Grafo<T> {
 				if(buscar.getLista().incluye(inicio.getData().getLista())) {
 					// Si las Lista de Adyacencia esta incluida devolver true
 					System.out.println("Las Listas de Adyacencia esta incluida");
+					copiaG.remove(inicio.getData());
 					retornar = true;
 					inicio = inicio.getNext();
 				} else {
